@@ -1,19 +1,25 @@
+import { Inter as FontSans } from "next/font/google";
 import Metadata from "../config/metadata";
 import { PropsWithChildren } from "react";
-import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "../assets/main.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// SEO metadata
 export const metadata = Metadata;
+
+// Inter font
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          inter.className,
-          "flex min-h-screen flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          "flex min-h-screen flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-background font-sans antialiased",
+          fontSans.variable
         )}
       >
         {children}
