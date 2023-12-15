@@ -1,3 +1,5 @@
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Inter as FontSans } from "next/font/google";
 import Metadata from "../config/metadata";
 import { PropsWithChildren } from "react";
@@ -22,7 +24,15 @@ export default function RootLayout({ children }: PropsWithChildren) {
           fontSans.variable
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   );

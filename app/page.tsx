@@ -1,15 +1,17 @@
+import { ThemeToggle } from "@/components/theme-toggle";
+
 export default function Home() {
   return (
     <main className="h-screen">
-      <h1 className="text-3xl font-semibold tracking-tighter mt-10">
-        Hello World!
+      <h1 className="scroll-m-20 mt-10 text-4xl font-extrabold tracking-tighter lg:text-5xl">
+        The Joke Tax Chronicles
       </h1>
-      <p className="mt-2 max-w-3xl text-gray-600 text-sm">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere dolor
-        eos cupiditate ullam. Cumque atque dolore sit dolores ab numquam
-        dignissimos corporis ipsum. Itaque mollitia deleniti aperiam cum debitis
-        sequi.
+      <p className="leading-6 [&:not(:first-child)]:mt-5 mb-4">
+        Once upon a time, in a far-off land, there was a very lazy king who
+        spent all day lounging on his throne. One day, his advisors came to him
+        with a problem: the kingdom was running out of money.
       </p>
+      <ThemeToggle />
     </main>
   );
 }
